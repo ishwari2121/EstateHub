@@ -5,6 +5,7 @@ import { app } from '../firebase';
 import {updateUserSuccess,updateUserFailure,updateUserStart} from '../redux/user/userSlice';
 import { deleteUserFailure,deleteUserSuccess, deleteUserStart } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
+import {Link} from 'react-router-dom'
 /* firebase storage
 allow read;
 allow write: if 
@@ -102,28 +103,6 @@ export default function Profile() {
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
@@ -183,6 +162,9 @@ export default function Profile() {
         >
           {loading ? 'Loading...' : 'Update'}
         </button>
+        <Link className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95'to={"/create-listing"}>
+          Create Listing
+        </Link>
       </form>
       <div className='flex justify-between mt-5'>
         <span onClick= {handleDeleteUser} className='text-red-700 cursor-pointer'>Delete Account</span>
